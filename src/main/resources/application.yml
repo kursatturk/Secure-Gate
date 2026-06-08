@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: securegate-nexus
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 2000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 2
+
+jwt:
+  keys-dir: keys
+  private-key-path: keys/private.pem
+  public-key-path: keys/public.pem
+  access-token-expiry: 900
+  issuer: securegate-nexus
+
+logging:
+  level:
+    com.securegate: DEBUG
